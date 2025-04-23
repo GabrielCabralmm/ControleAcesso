@@ -28,26 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
-            dataGridView1 = new DataGridView();
+            dgvRegistros = new DataGridView();
             clnId = new DataGridViewTextBoxColumn();
             clnUsuario = new DataGridViewTextBoxColumn();
             clnDataHora = new DataGridViewTextBoxColumn();
             clnTipoOperacao = new DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            btnVoltar = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)dgvRegistros).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)btnVoltar).BeginInit();
             SuspendLayout();
             // 
-            // dataGridView1
+            // dgvRegistros
             // 
-            dataGridView1.AllowUserToAddRows = false;
-            dataGridView1.AllowUserToDeleteRows = false;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { clnId, clnUsuario, clnDataHora, clnTipoOperacao });
-            dataGridView1.Location = new Point(74, 88);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.ReadOnly = true;
-            dataGridView1.RowHeadersVisible = false;
-            dataGridView1.Size = new Size(653, 350);
-            dataGridView1.TabIndex = 0;
+            dgvRegistros.AllowUserToAddRows = false;
+            dgvRegistros.AllowUserToDeleteRows = false;
+            dgvRegistros.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvRegistros.Columns.AddRange(new DataGridViewColumn[] { clnId, clnUsuario, clnDataHora, clnTipoOperacao });
+            dgvRegistros.Location = new Point(74, 88);
+            dgvRegistros.Name = "dgvRegistros";
+            dgvRegistros.ReadOnly = true;
+            dgvRegistros.RowHeadersVisible = false;
+            dgvRegistros.Size = new Size(653, 350);
+            dgvRegistros.TabIndex = 0;
             // 
             // clnId
             // 
@@ -77,24 +79,38 @@
             clnTipoOperacao.ReadOnly = true;
             clnTipoOperacao.Width = 150;
             // 
+            // btnVoltar
+            // 
+            btnVoltar.Image = Properties.Resources.btnVoltar;
+            btnVoltar.Location = new Point(12, 12);
+            btnVoltar.Name = "btnVoltar";
+            btnVoltar.Size = new Size(145, 40);
+            btnVoltar.TabIndex = 14;
+            btnVoltar.TabStop = false;
+            btnVoltar.Click += btnVoltar_Click;
+            // 
             // FrmRegistroAcesso
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(dataGridView1);
+            Controls.Add(btnVoltar);
+            Controls.Add(dgvRegistros);
             Name = "FrmRegistroAcesso";
             Text = "FrmRegistroAcesso";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            Load += FrmRegistroAcesso_Load;
+            ((System.ComponentModel.ISupportInitialize)dgvRegistros).EndInit();
+            ((System.ComponentModel.ISupportInitialize)btnVoltar).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private DataGridView dataGridView1;
+        private DataGridView dgvRegistros;
         private DataGridViewTextBoxColumn clnId;
         private DataGridViewTextBoxColumn clnUsuario;
         private DataGridViewTextBoxColumn clnDataHora;
         private DataGridViewTextBoxColumn clnTipoOperacao;
+        private PictureBox btnVoltar;
     }
 }

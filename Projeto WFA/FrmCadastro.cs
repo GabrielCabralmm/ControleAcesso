@@ -23,5 +23,11 @@ namespace Projeto_WFA
             Usuario usuario = new(txtNome.Text, txtCpf.Text, cmbTipo.SelectedIndex + 1, txtSenha.Text);
             usuario.Cadastrar();
         }
+
+        private void btnVoltar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            FrmPrincipal.pnlMenu.Visible = true;
+        }
     }
 }

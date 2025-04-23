@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Projeto_LIB;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -23,6 +24,48 @@ namespace Projeto_WFA
             FrmLogin frmLogin = new();
             frmLogin.ShowDialog();
             Show();
+        }
+
+        private void btnRegistros_Click(object sender, EventArgs e)
+        {
+            FrmRegistroAcesso frmRegistroAcesso = new();
+            frmRegistroAcesso.TopLevel = false;
+            frmRegistroAcesso.FormBorderStyle = FormBorderStyle.None;
+            frmRegistroAcesso.MaximizeBox = true;
+            frmRegistroAcesso.AutoSize = true;
+            frmRegistroAcesso.Size = pnlCentral.Size;
+            pnlCentral.Controls.Clear();
+            pnlCentral.Controls.Add(frmRegistroAcesso);
+            pnlMenu.Visible = false;
+            pnlCentral.Dock = DockStyle.Fill;
+
+            frmRegistroAcesso.Show();
+            pnlCentral.Visible = true;
+        }
+
+        private void btnCadastrar_Click(object sender, EventArgs e)
+        {
+            FrmCadastro frmCadastro = new();
+            frmCadastro.TopLevel = false;
+            frmCadastro.FormBorderStyle = FormBorderStyle.None;
+            frmCadastro.MaximizeBox = true;
+            frmCadastro.AutoSize = true;
+            frmCadastro.Size = pnlCentral.Size;
+            pnlCentral.Controls.Clear();
+            pnlCentral.Controls.Add(frmCadastro);
+            pnlMenu.Visible = false;
+            pnlCentral.Dock = DockStyle.Fill;
+
+            frmCadastro.Show();
+            pnlCentral.Visible = true;
+        }
+
+        private void btnSair_Click(object sender, EventArgs e)
+        {
+            RegistroAcesso registroAcesso = new();
+            registroAcesso.UsuarioId = usuario.Id;
+            registroAcesso.RegistrarSaida();
+            Application.Exit();
         }
     }
 }

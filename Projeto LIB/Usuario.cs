@@ -54,7 +54,6 @@ namespace Projeto_LIB
             }
             return usuario;
         }
-
         public void Cadastrar()
         {
             var cmd = Banco.Abrir();
@@ -62,9 +61,7 @@ namespace Projeto_LIB
             cmd.CommandText = $"insert into usuarios (nome, cpf, tipo, senha)" +
                 $"values ('{Nome}', '{Cpf}', '{Tipo}', md5('{Senha}'))";
             cmd.ExecuteNonQuery();
-            Id = Convert.ToInt32(cmd.ExecuteScalar());
         }
-
         public static Usuario Logar(string cpf, string senha)
         {
             Usuario usuario = new();
@@ -81,7 +78,6 @@ namespace Projeto_LIB
                 usuario.Cpf = dr.GetString(2);
                 usuario.Tipo = dr.GetInt32(3);
             }
-
             return usuario;
         }
     }

@@ -123,6 +123,7 @@
             Controls.Add(txtCpf);
             Name = "FrmLogin";
             Text = "FrmLogin";
+            Load += FrmLogin_Load;
             ResumeLayout(false);
             PerformLayout();
         }

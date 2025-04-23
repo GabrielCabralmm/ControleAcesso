@@ -24,7 +24,12 @@ namespace Projeto_LIB
             DataHora = dataHora;
             TipoOperacao = tipoOperacao;
         }
-
+        public RegistroAcesso(int usuarioId, DateTime dataHora, string tipoOperacao)
+        {
+            UsuarioId = usuarioId;
+            DataHora = dataHora;
+            TipoOperacao = tipoOperacao;
+        }
         // Métodos da classe RegistroAcesso
         public static RegistroAcesso ObterPorId(int id)
         {
@@ -68,18 +73,16 @@ namespace Projeto_LIB
             var cmd = Banco.Abrir();
             cmd.CommandType = CommandType.Text;
             cmd.CommandText = $"insert into registro_acessos (id_usuario, data_hora, tipo_operacao)" +
-                $"values ('{UsuarioId}', 'default', 'Entrada')";
+                $"values ('{UsuarioId}', default, 'Entrada')";
             cmd.ExecuteNonQuery();
-            Id = Convert.ToInt32(cmd.ExecuteScalar());
         }
         public void RegistrarSaida()
         {
             var cmd = Banco.Abrir();
             cmd.CommandType = CommandType.Text;
             cmd.CommandText = $"insert into registro_acessos (id_usuario, data_hora, tipo_operacao)" +
-                $"values ('{UsuarioId}', 'default', 'Saída')";
+                $"values ('{UsuarioId}', default, 'Saída')";
             cmd.ExecuteNonQuery();
-            Id = Convert.ToInt32(cmd.ExecuteScalar());
         }
     }
 }

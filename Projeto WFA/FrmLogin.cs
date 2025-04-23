@@ -31,16 +31,26 @@ namespace Projeto_WFA
                 if (usuario.Id > 0)
                 {
                     Close();
+                    RegistroAcesso registroAcesso = new();
+                    registroAcesso.UsuarioId = usuario.Id;
+                    registroAcesso.RegistrarEntrada();
                 }
                 else
                 {
                     lblIncorreto.Visible = true;
+                    lblObrigatorios.Visible = false;
                 }
             }
             else
             {
                 lblObrigatorios.Visible = true;
+                lblIncorreto.Visible = false;
             }
+        }
+
+        private void FrmLogin_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

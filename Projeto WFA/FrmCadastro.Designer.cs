@@ -34,6 +34,8 @@
             cmbTipo = new ComboBox();
             txtCpf = new TextBox();
             txtNome = new TextBox();
+            btnVoltar = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)btnVoltar).BeginInit();
             SuspendLayout();
             // 
             // lblCadastro
@@ -90,11 +92,22 @@
             txtNome.Size = new Size(271, 23);
             txtNome.TabIndex = 7;
             // 
+            // btnVoltar
+            // 
+            btnVoltar.Image = Properties.Resources.btnVoltar;
+            btnVoltar.Location = new Point(12, 12);
+            btnVoltar.Name = "btnVoltar";
+            btnVoltar.Size = new Size(145, 40);
+            btnVoltar.TabIndex = 13;
+            btnVoltar.TabStop = false;
+            btnVoltar.Click += btnVoltar_Click;
+            // 
             // FrmCadastro
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnVoltar);
             Controls.Add(lblCadastro);
             Controls.Add(btnCadastrar);
             Controls.Add(txtSenha);
@@ -103,6 +116,7 @@
             Controls.Add(txtNome);
             Name = "FrmCadastro";
             Text = "FrmCadastro";
+            ((System.ComponentModel.ISupportInitialize)btnVoltar).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -115,5 +129,6 @@
         public ComboBox cmbTipo;
         public TextBox txtCpf;
         public TextBox txtNome;
+        private PictureBox btnVoltar;
     }
 }
