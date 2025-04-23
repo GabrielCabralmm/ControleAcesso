@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35818.85 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Projeto WFA", "Projeto WFA\Projeto WFA.csproj", "{2A360912-1809-4CEF-898B-719C5A06CD4B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Projeto LIB", "Projeto LIB\Projeto LIB.csproj", "{1018152C-055F-4736-ABED-8ABB8A541215}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2A360912-1809-4CEF-898B-719C5A06CD4B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A360912-1809-4CEF-898B-719C5A06CD4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A360912-1809-4CEF-898B-719C5A06CD4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A360912-1809-4CEF-898B-719C5A06CD4B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1018152C-055F-4736-ABED-8ABB8A541215}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1018152C-055F-4736-ABED-8ABB8A541215}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1018152C-055F-4736-ABED-8ABB8A541215}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1018152C-055F-4736-ABED-8ABB8A541215}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {11C8B725-AACA-435F-AA34-164B06BF1411}
+	EndGlobalSection
+EndGlobal
