@@ -1,4 +1,5 @@
-﻿using Projeto_LIB;
+﻿using Microsoft.Win32;
+using Projeto_LIB;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,6 +25,8 @@ namespace Projeto_WFA
             FrmLogin frmLogin = new();
             frmLogin.ShowDialog();
             Show();
+
+            lblTipo.Text = Program.usuario.Nome;
         }
 
         private void btnRegistros_Click(object sender, EventArgs e)
@@ -62,10 +65,19 @@ namespace Projeto_WFA
 
         private void btnSair_Click(object sender, EventArgs e)
         {
-            RegistroAcesso registroAcesso = new();
-            registroAcesso.UsuarioId = usuario.Id;
-            registroAcesso.RegistrarSaida();
-            Application.Exit();
+
+            if (Program.usuario.Id > 0)
+            {
+                RegistroAcesso registroAcesso = new();
+                registroAcesso.UsuarioId = Program.usuario.Id;
+                registroAcesso.RegistrarSaida();
+                Application.Exit();
+            }
+        }
+
+        private void pnlCentral_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

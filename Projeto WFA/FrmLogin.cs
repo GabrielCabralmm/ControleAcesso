@@ -30,10 +30,12 @@ namespace Projeto_WFA
                 var usuario = Usuario.Logar(txtCpf.Text, txtSenha.Text);
                 if (usuario.Id > 0)
                 {
-                    Close();
+
                     RegistroAcesso registroAcesso = new();
                     registroAcesso.UsuarioId = usuario.Id;
                     registroAcesso.RegistrarEntrada();
+                    Program.usuario = usuario;
+                    Close();
                 }
                 else
                 {
@@ -51,6 +53,20 @@ namespace Projeto_WFA
         private void FrmLogin_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void lblExibirSenha_Click(object sender, EventArgs e)
+        {
+            txtSenha.UseSystemPasswordChar = false;
+            lblExibirSenha.Visible = false;
+            lblOcultarSenha.Visible = true;
+        }
+
+        private void lblOcultarSenha_Click(object sender, EventArgs e)
+        {
+            txtSenha.UseSystemPasswordChar = true;
+            lblOcultarSenha.Visible = false;
+            lblExibirSenha.Visible = true;
         }
     }
 }

@@ -27,7 +27,10 @@ namespace Projeto_WFA
             {
                 dgvRegistros.Rows.Add();
                 dgvRegistros.Rows[linha].Cells[0].Value = registro.Id;
-                dgvRegistros.Rows[linha].Cells[1].Value = registro.UsuarioId;
+
+                //dgvRegistros.Rows[linha].Cells[1].Value = registro.UsuarioId;
+                var usuario = Usuario.ObterPorId(registro.UsuarioId);
+                dgvRegistros.Rows[linha].Cells[1].Value = usuario.Nome;
                 dgvRegistros.Rows[linha].Cells[2].Value = registro.DataHora;
                 dgvRegistros.Rows[linha].Cells[3].Value = registro.TipoOperacao;
 

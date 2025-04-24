@@ -35,13 +35,15 @@
             btnCancelar = new Button();
             lblObrigatorios = new Label();
             lblIncorreto = new Label();
+            lblExibirSenha = new Label();
+            lblOcultarSenha = new Label();
             SuspendLayout();
             // 
             // lblCadastro
             // 
             lblCadastro.AutoSize = true;
             lblCadastro.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblCadastro.Location = new Point(311, 146);
+            lblCadastro.Location = new Point(311, 136);
             lblCadastro.Name = "lblCadastro";
             lblCadastro.Size = new Size(178, 30);
             lblCadastro.TabIndex = 16;
@@ -50,7 +52,7 @@
             // btnCadastrar
             // 
             btnCadastrar.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnCadastrar.Location = new Point(287, 290);
+            btnCadastrar.Location = new Point(287, 286);
             btnCadastrar.Name = "btnCadastrar";
             btnCadastrar.Size = new Size(105, 29);
             btnCadastrar.TabIndex = 15;
@@ -60,15 +62,16 @@
             // 
             // txtSenha
             // 
-            txtSenha.Location = new Point(265, 243);
+            txtSenha.Location = new Point(265, 247);
             txtSenha.Name = "txtSenha";
             txtSenha.PlaceholderText = "Senha";
             txtSenha.Size = new Size(271, 23);
             txtSenha.TabIndex = 14;
+            txtSenha.UseSystemPasswordChar = true;
             // 
             // txtCpf
             // 
-            txtCpf.Location = new Point(265, 199);
+            txtCpf.Location = new Point(265, 198);
             txtCpf.Name = "txtCpf";
             txtCpf.PlaceholderText = "Cpf";
             txtCpf.Size = new Size(271, 23);
@@ -77,7 +80,7 @@
             // btnCancelar
             // 
             btnCancelar.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnCancelar.Location = new Point(408, 290);
+            btnCancelar.Location = new Point(408, 286);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(105, 29);
             btnCancelar.TabIndex = 17;
@@ -88,11 +91,11 @@
             // lblObrigatorios
             // 
             lblObrigatorios.AutoSize = true;
-            lblObrigatorios.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblObrigatorios.Font = new Font("Segoe UI", 9.75F);
             lblObrigatorios.ForeColor = Color.FromArgb(192, 0, 0);
-            lblObrigatorios.Location = new Point(265, 181);
+            lblObrigatorios.Location = new Point(265, 177);
             lblObrigatorios.Name = "lblObrigatorios";
-            lblObrigatorios.Size = new Size(162, 15);
+            lblObrigatorios.Size = new Size(177, 17);
             lblObrigatorios.TabIndex = 18;
             lblObrigatorios.Text = "Preencha ambos os campos!";
             lblObrigatorios.Visible = false;
@@ -100,20 +103,51 @@
             // lblIncorreto
             // 
             lblIncorreto.AutoSize = true;
-            lblIncorreto.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblIncorreto.Font = new Font("Segoe UI", 9.75F);
             lblIncorreto.ForeColor = Color.FromArgb(192, 0, 0);
-            lblIncorreto.Location = new Point(265, 181);
+            lblIncorreto.Location = new Point(265, 177);
             lblIncorreto.Name = "lblIncorreto";
-            lblIncorreto.Size = new Size(134, 15);
+            lblIncorreto.Size = new Size(145, 17);
             lblIncorreto.TabIndex = 19;
             lblIncorreto.Text = "CPF ou senha inválidos!";
             lblIncorreto.Visible = false;
             // 
+            // lblExibirSenha
+            // 
+            lblExibirSenha.AutoSize = true;
+            lblExibirSenha.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblExibirSenha.ForeColor = SystemColors.MenuHighlight;
+            lblExibirSenha.Location = new Point(265, 226);
+            lblExibirSenha.Name = "lblExibirSenha";
+            lblExibirSenha.Size = new Size(82, 17);
+            lblExibirSenha.TabIndex = 20;
+            lblExibirSenha.Text = "Exibir Senha.";
+            lblExibirSenha.Click += lblExibirSenha_Click;
+            // 
+            // lblOcultarSenha
+            // 
+            lblOcultarSenha.AutoSize = true;
+            lblOcultarSenha.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblOcultarSenha.ForeColor = SystemColors.MenuHighlight;
+            lblOcultarSenha.Location = new Point(265, 226);
+            lblOcultarSenha.Name = "lblOcultarSenha";
+            lblOcultarSenha.Size = new Size(92, 17);
+            lblOcultarSenha.TabIndex = 20;
+            lblOcultarSenha.Text = "Ocultar Senha.";
+            lblOcultarSenha.Visible = false;
+            lblOcultarSenha.Click += lblOcultarSenha_Click;
+            // 
             // FrmLogin
             // 
+            AcceptButton = btnCadastrar;
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.Control;
+            CancelButton = btnCancelar;
             ClientSize = new Size(800, 450);
+            ControlBox = false;
+            Controls.Add(lblOcultarSenha);
+            Controls.Add(lblExibirSenha);
             Controls.Add(lblIncorreto);
             Controls.Add(lblObrigatorios);
             Controls.Add(btnCancelar);
@@ -132,10 +166,12 @@
 
         public Label lblCadastro;
         public Button btnCadastrar;
-        public TextBox txtSenha;
-        public TextBox txtCpf;
         public Button btnCancelar;
         private Label lblObrigatorios;
         private Label lblIncorreto;
+        public TextBox txtSenha;
+        public TextBox txtCpf;
+        private Label lblExibirSenha;
+        private Label lblOcultarSenha;
     }
 }
