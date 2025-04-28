@@ -1,23 +1,23 @@
-create database controleacesso;
+<p>create database controleacesso;
 
-use controleacesso;
+<p>use controleacesso;
 
-create table usuarios (
-id int not null auto_increment,
-nome varchar(60) not null,
-cpf varchar(11) not null unique,
-tipo int not null,
-senha varchar(32) not null,
-primary key (id)
-);
-select * from usuarios;
+<p>create table usuarios (
+<p>id int not null auto_increment,
+<p>nome varchar(60) not null,
+<p>cpf varchar(11) not null unique,
+<p>tipo int not null,
+<p>senha varchar(32) not null,
+<p>primary key (id)
+<p>);
+<p>select * from usuarios;
 
-create table registro_acessos (
-id int not null auto_increment,
-id_usuario int not null,
-data_hora datetime default current_timestamp,
-tipo_operacao varchar(30) not null,
-primary key (id),
-foreign key (id_usuario) references usuarios (id)
-);
-select * from registro_acessos;
+<p>create table registro_acessos (
+<p>id int not null auto_increment,
+<p>id_usuario int not null,
+<p>data_hora datetime default current_timestamp,
+<p>tipo_operacao varchar(30) not null,
+<p>primary key (id),
+<p>foreign key (id_usuario) references usuarios (id)
+<p>);
+<p>select * from registro_acessos;
